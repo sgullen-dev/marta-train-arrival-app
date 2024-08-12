@@ -39,7 +39,7 @@ export const HelpPopover = ({ id, open, anchorEl, onClose }: HelpPopoverProps) =
           Arrival Filters
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Set arrival filters to display the next 10 upcoming MARTA train arrivals.
+          Set arrival filters to display the upcoming MARTA train arrivals.
         </Typography>
         <Divider sx={{ margin: '10px 0' }} />
         <Typography variant="body2" color="text.primary">

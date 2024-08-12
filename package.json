@@ -5,34 +5,41 @@
   "keywords": [],
   "main": "src/index.tsx",
   "dependencies": {
-    "@emotion/react": "11.10.5",
-    "@emotion/styled": "11.10.5",
-    "@mui/icons-material": "5.11.9",
-    "@mui/material": "5.11.9",
-    "@testing-library/react": "13.4.0",
-    "@types/react": "18.0.28",
-    "axios": "1.3.3",
-    "prettier": "2.8.7",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-query": "3.39.3",
-    "react-scripts": "4.0.0",
-    "typescript": "4.9.5"
-  },
-  "devDependencies": {
-    "@babel/runtime": "7.13.8",
-    "typescript": "4.1.3"
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^5.16.7",
+    "@mui/material": "^5.16.7",
+    "@testing-library/react": "^16.0.0",
+    "@types/react": "^18.3.3",
+    "axios": "^1.7.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-query": "^3.39.3",
+    "react-scripts": "^5.0.1",
+    "typescript": "^5.5.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier 'src/**/*.{js,jsx,ts,tsx,json}' --write"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/react-dom": "^18.3.0",
+    "prettier": "^3.3.3"
+  }
 }

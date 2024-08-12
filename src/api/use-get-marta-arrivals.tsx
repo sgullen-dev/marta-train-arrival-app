@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
 import axios, { AxiosError } from 'axios';
-import { apiKey, martaArrivalsURL } from './config';
+import { apiKey, corsProxyURL, martaArrivalsURL } from './config';
 import { updateOptionData } from './utils';
 import {
   ArrivalData,
@@ -13,7 +13,7 @@ export const useGetMartaArrivals = () => {
   const config = {
     method: 'get',
     params: { apiKey },
-    url: martaArrivalsURL,
+    url: `${corsProxyURL}${martaArrivalsURL}`,
   };
   return useQuery<MartaArrivals, AxiosError>(
     'marta-arrivals',
@@ -32,6 +32,7 @@ export const useGetMartaArrivals = () => {
           updateOptionData(lines, LINE, [DESTINATION, STATION]);
           updateOptionData(stations, STATION, [DESTINATION, LINE]);
         });
+
         return {
           arrivals,
           destinations,

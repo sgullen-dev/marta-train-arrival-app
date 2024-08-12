@@ -13,7 +13,6 @@ import { SelectFilter } from './components/select-filter';
 
 const FormHeader = styled(Typography)(({ theme }) => ({
   margin: '5px 0 15px',
-  // @ts-ignore : Custom breakpoints not working with typescript in codesandbox
   [theme.breakpoints.down(theme.breakpoints.values.mobile)]: {
     fontSize: '1rem',
   },

@@ -6,7 +6,7 @@ import App from './App';
 import MuiThemeProvider from './utils/mui-theme-provider';
 import ReactQueryProvider from './utils/react-query-provider';
 
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById('root') as HTMLElement;
 const root = createRoot(rootElement);
 
 root.render(

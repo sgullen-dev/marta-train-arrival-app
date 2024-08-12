@@ -7,14 +7,12 @@ import { blue, green, red, yellow, grey } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
 
 const LineAvatarWrapper = styled(ListItemAvatar)(({ theme }) => ({
-  // @ts-ignore : Custom breakpoints not working with typescript in codesandbox
   [theme.breakpoints.down(theme.breakpoints.values.mobile)]: {
     marginTop: '12px',
   },
 }));
 
 const LineAvatar = styled(Avatar)(({ theme }) => ({
-  // @ts-ignore : Custom breakpoints not working with typescript in codesandbox
   [theme.breakpoints.down(theme.breakpoints.values.mobile)]: {
     width: '35px',
     height: '35px',

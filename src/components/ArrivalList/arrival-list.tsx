@@ -20,7 +20,10 @@ import { itemsPerPage, showPageItem } from '../../utils/pagination-utils';
 
 const ArrivalsPaper = styled(Paper)(({ theme }) => ({
   padding: '8px',
-  // @ts-ignore : Custom breakpoints not working with typescript in codesandbox
+  '& .MuiListItem-root': {
+    paddingTop: '5px',
+    paddingBottom: '5px',
+  },
   [theme.breakpoints.down(theme.breakpoints.values.mobile)]: {
     padding: 0,
   },
@@ -33,7 +36,6 @@ const PaginationWrapper = styled(Box)(({ theme }) => ({
   '& .MuiPaginationItem-firstLast': {
     display: 'none',
   },
-  // @ts-ignore : Custom breakpoints not working with typescript in codesandbox
   [theme.breakpoints.down(theme.breakpoints.values.xsMobile)]: {
     '& .MuiPaginationItem-firstLast': {
       display: 'inline-flex',
@@ -49,7 +51,7 @@ const PaginationWrapper = styled(Box)(({ theme }) => ({
 
 interface ArrivalListProps {
   data: MartaArrivals;
-  filters: FilterData;
+  filters?: FilterData;
 }
 
 /**
@@ -65,6 +67,7 @@ export const ArrivalList = ({
 
   // Filter the arrivals based on the selected filter values and sort by arrival time
   const displayedArrivals = useMemo(() => {
+    if (!filters) return [];
     const filteredArrivals = filterArrivals(arrivals, filters);
     return sortByWaitingSeconds(filteredArrivals);
   }, [arrivals, filters]);
@@ -108,18 +111,15 @@ export const ArrivalList = ({
                       direction={arrival.DIRECTION}
                     />
                     <Grid container>
-                      {/** @ts-ignore : Custom breakpoints not working with typescript in codesandbox */}
                       <Grid item xs={6} xsMobile={3}>
                         <ArrivalDetailText label="Time" value={arrival.WAITING_TIME} />
                       </Grid>
-                      {/** @ts-ignore : Custom breakpoints not working with typescript in codesandbox */}
                       <Grid item xs={6} xsMobile={5}>
                         <ArrivalDetailText
                           label="Station"
                           value={stations[arrival.STATION]?.name || arrival.STATION}
                         />
                       </Grid>
-                      {/** @ts-ignore : Custom breakpoints not working with typescript in codesandbox */}
                       <Grid item xs={12} xsMobile={4}>
                         <ArrivalDetailText
                           label="Destination"

@@ -18,7 +18,6 @@ import MartaLogo from '../../images/marta-logo-white.png';
 
 const BrandBox = styled('div')(({ theme }) => ({
   height: '25px',
-  // @ts-ignore : Custom breakpoints not working with typescript in codesandbox
   [theme.breakpoints.down(theme.breakpoints.values.mobile)]: {
     display: 'none',
   },
@@ -26,14 +25,12 @@ const BrandBox = styled('div')(({ theme }) => ({
 
 const LogoBox = styled('div')(({ theme }) => ({
   height: '25px',
-  // @ts-ignore : Custom breakpoints not working with typescript in codesandbox
   [theme.breakpoints.down(theme.breakpoints.values.mobile)]: {
     height: '20px',
   },
 }));
 
 const AppHeader = styled(Typography)(({ theme }) => ({
-  // @ts-ignore : Custom breakpoints not working with typescript in codesandbox
   [theme.breakpoints.down(theme.breakpoints.values.mobile)]: {
     fontSize: '1rem',
   },
@@ -47,12 +44,11 @@ export function MartaAppBar() {
   const [helpAnchorEl, setHelpAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const open = Boolean(helpAnchorEl);
-  const id = open ? 'help-popover' : undefined;
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <HelpPopover
-        id={id}
+        id="help-popover"
         open={open}
         anchorEl={helpAnchorEl}
         onClose={() => setHelpAnchorEl(null)}
@@ -69,7 +65,7 @@ export function MartaAppBar() {
             <AppHeader variant="h6">Train Arrivals Tracker</AppHeader>
           </Box>
           <IconButton
-            aria-describedby={id}
+            aria-describedby="help-popover"
             size="large"
             aria-label="app info"
             aria-controls="menu-appbar"
