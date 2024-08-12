@@ -18,6 +18,7 @@ import MartaLogo from '../../images/marta-logo-white.png';
 
 const BrandBox = styled('div')(({ theme }) => ({
   height: '25px',
+  marginRight: '5px',
   [theme.breakpoints.down(theme.breakpoints.values.mobile)]: {
     display: 'none',
   },
@@ -34,6 +35,12 @@ const AppHeader = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down(theme.breakpoints.values.mobile)]: {
     fontSize: '1rem',
   },
+}));
+
+const AppTopBar = styled(AppBar)(() => ({
+  backgroundColor: grey[700],
+  borderRadius: 0,
+  border: 0,
 }));
 
 /**
@@ -53,7 +60,7 @@ export function MartaAppBar() {
         anchorEl={helpAnchorEl}
         onClose={() => setHelpAnchorEl(null)}
       />
-      <AppBar position="static" sx={{ backgroundColor: grey[700] }}>
+      <AppTopBar position="static" elevation={0}>
         <Toolbar>
           <BrandBox>
             <img src={MartaLogo} height="100%" alt="MARTA" />
@@ -76,7 +83,7 @@ export function MartaAppBar() {
             <HelpIcon />
           </IconButton>
         </Toolbar>
-      </AppBar>
+      </AppTopBar>
     </Box>
   );
 }

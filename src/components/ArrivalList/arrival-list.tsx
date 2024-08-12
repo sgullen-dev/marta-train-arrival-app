@@ -98,7 +98,7 @@ export const ArrivalList = ({
   }
 
   return (
-    <ArrivalsPaper elevation={2}>
+    <ArrivalsPaper>
       <>
         <List sx={{ padding: '4px 0' }}>
           {displayedArrivals.map((arrival, index) => {

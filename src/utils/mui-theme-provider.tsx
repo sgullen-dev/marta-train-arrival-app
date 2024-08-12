@@ -27,6 +27,20 @@ const theme: Theme = createTheme({
       xl: 1536,
     },
   },
+  components: {
+    MuiPaper: {
+      defaultProps: {
+        elevation: 0,
+      },
+      styleOverrides: {
+        root: {
+          padding: '10px',
+          borderRadius: '10px',
+          border: `1px solid #cfd9de`,
+        },
+      },
+    },
+  },
 });
 
 /**

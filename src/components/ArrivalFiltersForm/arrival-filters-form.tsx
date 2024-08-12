@@ -2,8 +2,8 @@
 import { useState, useEffect } from 'react';
 // Material UI
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import Paper from '@mui/material/Paper';
 import { SelectChangeEvent } from '@mui/material/Select';
 import { styled } from '@mui/material/styles';
 // Internal
@@ -59,7 +59,7 @@ export const ArrivalFiltersForm = ({
   };
 
   return (
-    <Paper elevation={2} sx={{ padding: '10px' }}>
+    <Paper>
       <Box
         component="form"
         noValidate
